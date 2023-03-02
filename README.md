@@ -1,7 +1,7 @@
 # URL analyzer
-This is a URL header analysis tool, built in Python 3
+This is a URL header analysis GUI tool, built with Python 3
 
-## Build With
+## Built With
 Python 3 Tkinter
 
 ## Active collaborators
