@@ -1,4 +1,4 @@
-from tkinter import Tk, Label, Entry, Button, messagebox
+from tkinter import Tk, Label, Entry, Button, messagebox, Frame, BOTH, LEFT
 import random
 import requests
 import validators
@@ -24,7 +24,7 @@ def fetch():
 
             label = Label(root, text=message, padx=20, pady=20)
             label.pack()
-            messagebox.showinfo(title='Results', message=message)
+            # messagebox.showinfo(title='Results', message=message)
         except Exception as e:
             print(e)
             messagebox.showerror(title='Error', message='Error occurred')
@@ -33,11 +33,18 @@ def fetch():
 
 if __name__ == '__main__':
     root = Tk()
+    root.title('akalive/url-analyzer')
+    root.geometry('400x200')
+    frame1 = Frame(master=root, width=200, height=100)
+    frame1.pack(fill=BOTH, side=LEFT, expand=True)
 
-    ent = Entry(root)
-    ent.pack()
+    label_for_entry = Label(frame1, text='Enter URL', padx=2, pady=2)
+    label_for_entry.pack()
 
-    widget = Button(root, text='Fetch!', command=fetch)
+    ent = Entry(master=frame1, width=60)
+    ent.pack(padx=5, pady=5)
+
+    widget = Button(frame1, text='Analyze!', command=fetch)
     widget.pack()
 
     root.mainloop()
