@@ -19,8 +19,6 @@ def fetch():
             print(url+" is the url.")
             resp = requests.head(url)
 
-            # message = "Server: " + resp.headers['server'] + " Last modified: " + resp.headers['last-modified'] + "
-            # Content type: " + resp.headers['content-type']
             message = resp.headers
             # print("Content type: " + resp.headers['content-type'])
 
